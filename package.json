@@ -1,0 +1,18 @@
+{
+  "name": "node-chat-app",
+  "version": "1.0.0",
+  "description": "Chat application built using node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abhishekpm15",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "moment": "^2.30.1",
+    "nodemon": "^3.1.7",
+    "socket.io": "^4.8.1"
+  }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Login</h1>
+    <form id="loginForm" class="login-form">
+
+      <label for="userName">User Name:</label>
+      <input
+        type="text"
+        id="userName"
+        class="login-input"
+        placeholder="Enter your name"
+        required
+      />
+
+      <label for="serverRoom">Enter Server Room Number:</label>
+      <input
+        type="text"
+        id="serverRoom"
+        class="login-input"
+        placeholder="Server Room Number"
+        required
+      />
+      <button type="submit" class="login-button">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); 
+      const userName = document.getElementById('userName').value.trim();
+      const serverRoom = document.getElementById('serverRoom').value;
+
+      if (userName && serverRoom) {
+        sessionStorage.setItem('userName', userName);
+        sessionStorage.setItem('serverRoom', serverRoom);
+        window.location.href = `chat.html?userName=${userName}&serverRoom=${serverRoom}`;
+      } else {
+        alert('Please fill out both fields.');
+      }
+
+    });
+  </script>
+</body>
+</html>
